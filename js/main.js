@@ -1,4 +1,4 @@
-const Immagini = document.getElementById("immagini");
+const listaImmagini = document.getElementById("listaImmagini");
 
 //creo un tag img con un'altra foto
 const secondImg = document.createElement("img");
@@ -8,16 +8,14 @@ secondImg.alt = "lampadinaaccesa";
 
 console.log(secondImg);
 
-//aggiungo la seconda immagine al div immagini nell'html
-Immagini.append(secondImg);
-
 const firstButton = document.getElementById("comando");
 console.log(firstButton);
 
 const primaFoto = document.getElementById("primaFoto");
 console.log(primaFoto);
 
-//scrivo una funzione per scambiare le immagini al click del bottone
+//aggiungo la seconda immagine al div immagini nell'html
 firstButton.addEventListener("click", () => {
+	listaImmagini.append(secondImg);
 	primaFoto.replaceWith(secondImg);
 });
