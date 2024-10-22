@@ -12,9 +12,12 @@ console.log(secondImg);
 Immagini.append(secondImg);
 
 const firstButton = document.getElementById("comando");
+console.log(firstButton);
+
 const primaFoto = document.getElementById("primaFoto");
+console.log(primaFoto);
 
 //scrivo una funzione per scambiare le immagini al click del bottone
 firstButton.addEventListener("click", () => {
-	primaFoto.toogle("seconda foto");
+	primaFoto.replaceWith(secondImg);
 });
