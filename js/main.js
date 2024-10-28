@@ -17,18 +17,25 @@ listaImmagini.appendChild(secondaFoto);
 const button = document.getElementById("comando");
 console.log(button);
 
-const spegni = () => {
-	primaFoto.classList.remove("d-none");
-	secondaFoto.classList.add("d-none");
-	button.innerHTML = "Accendi";
-};
-
+//creo una funzione per accendere la lampadina
+//tolgo la classe d-none alla seconda immagine per poterla vedere
+//e la aggiungo alla prima immagine per poterla nascondere
 const accendi = () => {
 	primaFoto.classList.add("d-none");
 	secondaFoto.classList.remove("d-none");
 	button.innerHTML = "Spegni";
 };
 
+//creo una funzione per spegnere la lampadina
+//tolgo la classe d-none alla prima immagine per poterla vedere
+//e la aggiungo alla seconda immagine per poterla nascondere
+const spegni = () => {
+	primaFoto.classList.remove("d-none");
+	secondaFoto.classList.add("d-none");
+	button.innerHTML = "Accendi";
+};
+
+//creo una funzione per alternare accendi/spegni
 const switchLight = () => {
 	if (button.innerHTML === "Accendi") {
 		accendi();
@@ -37,6 +44,5 @@ const switchLight = () => {
 	}
 };
 
-//con un click del bottone tolgo la classe d-none alla seconda immagine
-//per poterla vedere e la aggiungo alla prima immagine per poterla nascondere
+//al click del bottone applico la funzione per alternare accendi/spegni
 button.addEventListener("click", switchLight);
